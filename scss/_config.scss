@@ -5,16 +5,14 @@
 $primary-color: #444;
 $secondary-color: #eece1a;
 $show-home-image: true;
-$home-image: randomBackground(
-  url(../img/background1.jpg),
-  url(../img/background2.jpg),
-  url(../img/background3.jpg),
-  url(../img/background4.jpg),
-  url(../img/background5.jpg),
-  url(../img/background6.jpg),
-  url(../img/background7.jpg),
-  url(../img/background8.jpg),
-);
+$home-image: randomBackground(url(../img/background1.jpg));
+// url(../img/background2.jpg),
+// url(../img/background3.jpg),
+// url(../img/background4.jpg),
+// url(../img/background5.jpg),
+// url(../img/background6.jpg),
+// url(../img/background7.jpg),
+// url(../img/background8.jpg),
 $background-opacity: 0.5;
 
 @mixin easeOut {

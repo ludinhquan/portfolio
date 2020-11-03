@@ -1,0 +1,107 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+
+  .btn-item {
+    width: 28px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    @include easeOut;
+  }
+
+  &.close {
+    transform: rotate(180deg);
+
+    .btn-item {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+  }
+}
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+  display: flex;
+  flex: 2;
+
+  &-branding,
+  &-nav {
+    flex: 1;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &-branding {
+    background: $primary-color;
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+
+    .portrait {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border-radius: solid 3px $secondary-color;
+    }
+  }
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 5);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+
+    .nav-item {
+      transform: translate3d(600px, 0, 0);
+      @include easeOut;
+      .nav-link {
+        display: inline-block;
+        position: relative;
+        font-size: 28px;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 500;
+        color: #fff;
+        text-decoration: none;
+        @include easeOut;
+        &.current,
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  &.show {
+    visibility: visible;
+    .menu-branding,
+    .menu-nav,
+    .nav-item {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @for $i from 1 through 4 {
+    .nav-item:nth-child(#{$i}) {
+      transition-delay: $i * 0.1s;
+    }
+  }
+}

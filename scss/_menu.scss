@@ -10,7 +10,7 @@
     width: 28px;
     height: 3px;
     margin-bottom: 5px;
-    background-color: #ffffff;
+    background-color: setTextColor($primary-color);
     @include easeOut;
   }
 
@@ -80,7 +80,7 @@
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 500;
-        color: #fff;
+        color: setTextColor($primary-color);
         text-decoration: none;
         @include easeOut;
         &.current,

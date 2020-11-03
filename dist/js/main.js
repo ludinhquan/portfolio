@@ -6,6 +6,14 @@ const menu = document.querySelector(".menu");
 
 let showMenu = false;
 menuBtn.addEventListener("click", toogleMenu);
+window.addEventListener("keypress", keypress);
+window.addEventListener("keydown", keypress);
+
+function keypress(e) {
+  if (e.code === "Escape" && showMenu) {
+    toogleMenu();
+  }
+}
 
 function toogleMenu(e) {
   if (!showMenu) {

@@ -1,13 +1,12 @@
 const css = `
-  .img-wrapper{
+  picture{
+    display: inline-block;
     position: relative;
-    display: block;
     overflow: hidden;
     outline: none;
   }
 
   img {
-    display: block;
     width: 100%;
     height: auto;
     border: 0 none;
@@ -18,13 +17,13 @@ const css = `
     position: absolute;
     top: 0;
     left: 0;
-    will-change: transform, opacity;
+    will-change: opacity;
     animation: reveal 0.5s ease-out;
   }
 
   @keyframes reveal {
-    0% {transform: scale(1.05); opacity: 0;}
-    100% {transform: scale(1); opacity: 1;}
+    0% {opacity: 0;}
+    100% {opacity: 1;}
   }
 `;
 
@@ -33,18 +32,19 @@ const css = `
     addCss();
     const images = document.getElementsByTagName("img");
     for (let i = 0; i < images.length; i++) {
-      updateImgSrc(images[i]);
+      getImage(images[i]);
     }
   });
 })();
 
-function updateImgSrc(img) {
+function getImage(img) {
   const imgWrapper = img.parentNode;
   const newImage = new Image();
   newImage.src = img.dataset.src;
 
-  newImage.className = "reveal";
+  newImage.classList.add("reveal");
   imgWrapper.classList.add("img-wrapper");
+
   newImage.onload = () => {
     imgWrapper.insertBefore(newImage, img);
     newImage.onanimationend = () => {

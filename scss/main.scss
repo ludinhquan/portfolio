@@ -3,7 +3,6 @@
 @import "mobile";
 @import "typewriting";
 
-
 * {
   box-sizing: border-box;
 }
@@ -43,6 +42,8 @@ header {
 main {
   padding: 4rem;
   height: 100%;
+  position: relative;
+  z-index: 3;
   .icons {
     margin-top: 1rem;
     a {

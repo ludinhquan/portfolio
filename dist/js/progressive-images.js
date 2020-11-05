@@ -30,23 +30,41 @@ const css = `
 (function progressiveImage() {
   window.addEventListener("load", () => {
     addCss();
-    const images = document.getElementsByTagName("img");
-    for (let i = 0; i < images.length; i++) {
-      getImage(images[i]);
+    let timeOut = null;
+    const pictures = document.getElementsByTagName("picture");
+    onPageChange();
+
+    ["scroll"].forEach((event) => {
+      window.addEventListener(event, onPageChange);
+    });
+
+    function onPageChange() {
+      clearTimeout(timeOut);
+      timeOut = setTimeout(() => {
+        for (let i = 0; i < pictures.length; i++) {
+          const image = pictures[i].children[pictures[i].children.length - 1];
+          if (!image.dataset.loaded && isInView(image)) getImage(image);
+        }
+      }, 300);
     }
   });
 })();
 
+function isInView(img) {
+  const rect = img.getBoundingClientRect();
+  return rect.top + rect.height > 0 && rect.top < window.innerHeight;
+}
+
 function getImage(img) {
-  const imgWrapper = img.parentNode;
+  const picture = img.parentNode;
   const newImage = new Image();
   newImage.src = img.dataset.src;
 
   newImage.classList.add("reveal");
-  imgWrapper.classList.add("img-wrapper");
 
   newImage.onload = () => {
-    imgWrapper.insertBefore(newImage, img);
+    picture.insertBefore(newImage, img);
+    newImage.dataset.loaded = true;
     newImage.onanimationend = () => {
       img.remove();
       newImage.className = "";

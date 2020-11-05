@@ -167,8 +167,10 @@ a {
 
 header {
   position: fixed;
-  z-index: 2;
+  z-index: 1;
   width: 100%; }
+  header .img-wrapper img {
+    width: 100%; }
 
 .text-secondary {
   color: #eece1a; }
@@ -177,7 +179,7 @@ main {
   padding: 4rem;
   height: 100%;
   position: relative;
-  z-index: 3; }
+  z-index: 2; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {

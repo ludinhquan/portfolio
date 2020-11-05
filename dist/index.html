@@ -5,43 +5,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.css">
-  <script src="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.css">
+      <script src="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.js"></script> -->
   <link rel="stylesheet" href="css/main.css" />
+  <script src="js/progressive-images.js"></script>
   <title>Welcome To My Portfolio</title>
+  <style>
+    .img img{
+      height: 100vh;
+      /* width: auto; */
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-    <a href="img/background1.jpg" class="progressive replace">
-      <img src="img/background1_mini.jpg" class="preview" alt="image" />
-    </a>
-    <div class="menu-btn">
-      <div class="btn-item"></div>
-      <div class="btn-item"></div>
-      <div class="btn-item"></div>
+  <div class="img">
+    <img src="img/background1_mini.jpg" data-src="https://ludinhquan.github.io/portfolio/img/background1.jpg" />
+  </div>
+  <!-- <header>
+  <div class="menu-btn">
+    <div class="btn-item"></div>
+    <div class="btn-item"></div>
+    <div class="btn-item"></div>
+  </div>
+  <nav class="menu">
+    <div class="menu-branding">
+      <div class="portrait"></div>
     </div>
-    <nav class="menu">
-      <div class="menu-branding">
-        <div class="portrait"></div>
-      </div>
-      <ul class="menu-nav">
-        <li class="nav-item">
-          <a href="/" class="nav-link current">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="/about.html" class="nav-link">About me</a>
-        </li>
-        <li class="nav-item">
-          <a href="/work.html" class="nav-link">My Work</a>
-        </li>
-        <li class="nav-item">
-          <a href="/contact.html" class="nav-link">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main id="home">
+    <ul class="menu-nav">
+      <li class="nav-item">
+        <a href="/" class="nav-link current">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="/about.html" class="nav-link">About me</a>
+      </li>
+      <li class="nav-item">
+        <a href="/work.html" class="nav-link">My Work</a>
+      </li>
+      <li class="nav-item">
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  </header> -->
+  <!-- <main id="home">
     <h2 class="sm-heading">Hello! My name is</h2>
     <h1 class="lg-heading">Lu Dinh <span class="text-secondary">Quan</span></h1>
     <h2 class="sm-heading job">And I'm a <span id="typing">Web Developer</span></h2>
@@ -59,12 +66,14 @@
         <i class="fab fa-twitter fa-2x"></i>
       </a>
     </div>
-  </main>
-  <script src="js/main.js"></script>
-  <script src="js/typewriting.js"></script>
+  </main> -->
+  <!-- <script src="js/main.js"></script>
+  <script src="js/typewriting.js"></script> -->
 
   <script>
-    type({ elementId: 'typing', words: ["Web Developer", "Freelancer", "Designer"] });
+    // setTimeout(() => {
+    //   type({ elementId: 'typing', words: ["Web Developer", "Freelancer", "Designer"] });
+    // }, 1000);
   </script>
 </body>
 

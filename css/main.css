@@ -175,9 +175,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
-  position: relative;
-  z-index: 3; }
+  height: 100%; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {

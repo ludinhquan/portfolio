@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://quan.github.io/portfolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "start": "node-sass -w scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
   },
   "author": "Lu Dinh Quan",

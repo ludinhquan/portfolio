@@ -1,6 +1,8 @@
-@import 'config';
-@import 'menu';
-@import 'mobile';
+@import "config";
+@import "menu";
+@import "mobile";
+@import "typewriting";
+
 
 * {
   box-sizing: border-box;
@@ -21,15 +23,6 @@ h2,
 h3 {
   margin: 0;
   font-weight: 400;
-
-  &.lg-heading {
-    font-size: 6rem;
-  }
-  &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
-  }
 }
 
 a {
@@ -62,8 +55,18 @@ main {
   }
   &#home {
     overflow: hidden;
-    h1 {
+    > *:first-child {
       margin-top: 20vh;
+    }
+    .lg-heading {
+      font-size: 6rem;
+    }
+    .sm-heading {
+      padding: 0.2rem 1rem;
+    }
+    .job {
+      margin-bottom: 2rem;
+      background: rgba(lighten($primary-color, 2), 0.5);
     }
   }
 }

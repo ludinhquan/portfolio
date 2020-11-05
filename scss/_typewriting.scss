@@ -1,0 +1,21 @@
+#typing {
+  color: $secondary-color;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  &::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    width: 1px;
+    height: 60%;
+    margin-left: 20px;
+    border-right: 3px solid $secondary-color;
+    animation: blink 0.5s infinite ease;
+  }
+}
+
+@keyframes blink {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

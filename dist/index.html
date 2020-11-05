@@ -11,17 +11,22 @@
   <script src="js/progressive-images.js"></script>
   <title>Welcome To My Portfolio</title>
   <style>
-    .img img{
-      height: 100vh;
-      /* width: auto; */
+    picture img{
+      height: 50vh;
+      width: auto;
     }
   </style>
 </head>
 
 <body>
-  <div class="img">
-    <img src="img/background1_mini.jpg" data-src="https://ludinhquan.github.io/portfolio/img/background1.jpg" />
-  </div>
+  <picture>
+    <img src="img/background1_pre_load.webp" data-src="https://ludinhquan.github.io/portfolio/img/background1.jpg" />
+    <!-- <img src="https://ludinhquan.github.io/portfolio/img/background1.jpg" data-src="https://ludinhquan.github.io/portfolio/img/background1.jpg" /> -->
+  </picture>
+  <picture>
+    <!-- <img src="img/background_pre_load.webp" data-src="https://ludinhquan.github.io/portfolio/img/background1.jpg" /> -->
+    <img src="https://ludinhquan.github.io/portfolio/img/background2.jpg" data-src="https://ludinhquan.github.io/portfolio/img/background2.jpg" />
+  </picture>
   <!-- <header>
   <div class="menu-btn">
     <div class="btn-item"></div>
